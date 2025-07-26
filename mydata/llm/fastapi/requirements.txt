@@ -1,0 +1,23 @@
+# --- Web系 ---
+fastapi
+uvicorn[standard]
+requests
+httpx
+python-dotenv
+python-multipart
+aiofiles
+pydantic
+
+# --- 音声処理 / 音声認識 ---
+faster-whisper
+webrtcvad
+sounddevice
+pydub==0.25.1
+tiktoken
+
+# --- PyAudio（ビルド通らない事故対策）---
+# NOTE: Linux slim系では source からのビルドが必要なことが多いため、
+#       公式の.whl指定が安全 → pip install pyaudio==0.2.11 でビルド失敗したら以下推奨
+pyaudio==0.2.11
+
+

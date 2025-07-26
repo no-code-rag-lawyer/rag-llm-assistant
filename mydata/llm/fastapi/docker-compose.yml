@@ -1,0 +1,25 @@
+version: "3.9"
+
+services:
+  fastapi:
+    image: fastapi
+    container_name: fastapi
+    user: "1000:1000"
+    ports:
+      - "8000:8000"
+    environment:
+      - OLLAMA_HOST = os.getenv("OLLAMA_HOST", "http://llama:8000")
+      - VECTOR_API_URL=http://vector:8000/embed_search
+      - VOICEVOX_HOST=http://voicevox:50021
+      - MODEL_DIR=/mydata/llm/llama/models
+      - PYTHONPATH=/app
+    volumes:
+      - /mydata/llm/fastapi:/app
+      - /mydata/:/mydata/
+    networks:
+      - secretary-net
+
+networks:
+  secretary-net:
+    external: true
+

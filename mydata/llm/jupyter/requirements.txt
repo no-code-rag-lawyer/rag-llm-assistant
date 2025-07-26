@@ -1,0 +1,4 @@
+# --- Jupyter関連 ---
+jupyterlab
+notebook
+ipykernel

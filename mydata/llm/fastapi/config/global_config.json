@@ -1,0 +1,6 @@
+{
+  "model": "/models/gemma-3-4b-it-qat-q4_0/gemma-3-4b-it-qat-q4_0-japanese-imatrix-Q4_K_M.gguf",
+  "speaker_uuid": "3474ee95-c274-47f9-aa1a-8322163d96f1",
+  "style_id": 9,
+  "prompt_id": "mesugaki"
+}

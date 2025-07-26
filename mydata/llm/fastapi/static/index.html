@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AIチャット（音声入力対応）</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <div id="app">
+    <aside id="sidebar">
+      <h2>ルーム一覧</h2>
+      <div id="room-list"></div>
+
+      <div id="room-controls">
+        <button id="new-room-btn" class="sidebar-button">＋新規ルーム</button>
+        <button id="delete-room-btn" class="sidebar-button">🗑 ルーム削除</button>
+        <button id="rename-room-btn" class="sidebar-button">✏️ ルーム名変更</button>
+
+        <hr class="separator" />
+
+        <label for="speakerSelect">話者</label>
+        <select id="speakerSelect"></select>
+
+        <label for="styleSelect">スタイル</label>
+        <select id="styleSelect"></select>
+
+        <label for="modelSelect">モデル</label>
+        <select id="modelSelect"></select>
+
+        <label for="promptSelect">プロンプト</label>
+        <select id="promptSelect"></select>
+      </div>
+    </aside>
+
+    <main id="main">
+      <section id="chat">
+        <div id="chat-messages">
+          <div id="chat-anchor"></div>
+        </div>
+      </section>
+
+      <section id="chat-input">
+        <textarea id="user-input" placeholder="メッセージを入力..." rows="3"></textarea>
+        <div style="display:flex; gap:0.5rem; margin-top:0.5rem;">
+          <button id="send-btn">送信</button>
+          <button id="record-btn">🎙️</button>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script type="module" src="/static/config.js"></script>
+  <script type="module" src="/static/main.js"></script>
+</body>
+</html>
+

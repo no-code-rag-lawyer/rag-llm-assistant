@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  llama:
+    image: ghcr.io/ggerganov/llama.cpp:server
+    container_name: llama
+    command: >
+      --model /models/gemma-3-4b-it-qat-q4_0/gemma-3-4b-it-qat-q4_0-japanese-imatrix-Q4_K_M.gguf
+      --threads 16
+      --ctx-size 4096
+      --n-predict 2048
+      --port 8000
+      --host 0.0.0.0
+      --repeat_penalty 1.1 --repeat_last_n 64
+    volumes:
+      - /mydata/llm/llama/models:/models
+    networks:
+      - secretary-net
+    ports:
+      - "8003:8000"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+networks:
+  secretary-net:
+    external: true

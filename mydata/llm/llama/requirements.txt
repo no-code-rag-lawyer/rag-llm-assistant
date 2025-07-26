@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+llama-cpp-python
+torch
+numpy
+sentencepiece
+transformers
+huggingface_hub
+

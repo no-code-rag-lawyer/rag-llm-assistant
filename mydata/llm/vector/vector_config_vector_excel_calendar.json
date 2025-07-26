@@ -1,0 +1,6 @@
+{
+  "persist_directory": "/app/db/chroma/excel_calendar",
+  "collection_name": "vector_excel_calendar",
+  "embedding_model": "/mydata/llm/vector/models/legal-bge-m3",
+  "normalize_embeddings": true
+}

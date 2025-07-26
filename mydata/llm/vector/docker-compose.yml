@@ -1,0 +1,26 @@
+version: "3.9"
+
+services:
+  fastapi:
+    image: vector
+    container_name: vector
+    user: "1000:1000"
+    ports:
+      - "8001:8000"
+    volumes:
+      - /mydata/:/mydata/
+      - /mydata/llm/vector:/app 
+    networks:
+      - secretary-net
+    environment:
+      - PATH=/home/libreuser/.local/bin:/usr/local/bin:/usr/bin:/bin
+      - CHROMA_TELEMETRY_ENABLED=FALSE
+    command: uvicorn main:app --host 0.0.0.0 --port 8000
+    restart: unless-stopped
+
+
+
+
+networks:
+  secretary-net:
+    external: true
